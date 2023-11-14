@@ -4,9 +4,9 @@ const DEBUG = true; // production : false; dev : true
 
 // Accès base de données
 const BD_HOST = 'localhost';
-const BD_DBNAME = 'gerhard';
-const BD_USER = 'dev'; //gerhard-usr //dev
-const BD_PWD = 'x6xDWpiq)68.F4vP'; //GesThi9786Mon  //x6xDWpiq)68.F4vP
+const BD_DBNAME = 'webs5';
+const BD_USER = 'root'; //gerhard-usr //dev
+const BD_PWD = ''; //GesThi9786Mon  //x6xDWpiq)68.F4vP
 
 
 // Langue du site
