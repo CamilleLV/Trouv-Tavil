@@ -12,39 +12,59 @@
 
         </div>
         <div>
-            
-            <p>
-                Mes critères :
-            </p>
-
+            <div style="display: flex;">
+                <h3>
+                    Mes critères :
+                </h3>
+                <div class="tooltip">?
+                    <span class="tooltiptext">Pour les classer, Indiquez en dessous de chaques critères un nombre de 1 à 5 correspondant à leur importance selon vous (1 étant le plus importante) </span>
+              </div>
+            </div>
             <div class="criteria-list">
                 <div class="criteria">
-                    <p>
-                        Pollution
-                    </p>
+                    <input type="number" min="0" max="5" value="1" style="text-align: center;">
+                    <div>
+                        <p>
+                            Accès à l'école
+                        </p>
+                    </div>
                 </div>
                 <div class="criteria">
-                    <p>
-                        Densité
-                    </p>
-                </div>
-                <div class="criteria">
-                    <p>
-                        Nature
-                    </p>
-                </div>
-                <div class="criteria">
-                    <p>
-                        Connexion
-                    </p>
+                    <input type="number" min="0" max="5" value="2" style="text-align: center;">
+                    <div>
+                        <p>
+                            Coût du logement
+                        </p>
+                    </div>
+                </div>                <div class="criteria">
+                    <input type="number" min="0" max="5" value="3" style="text-align: center;">
+                    <div>
+                        <p>
+                            Transports (gare)
+                        </p>
+                    </div>
+                </div>                <div class="criteria">
+                    <input type="number" min="0" max="5" value="4" style="text-align: center;">
+                    <div>
+                        <p>
+                            Grande ville
+                        </p>
+                    </div>
+                </div>                <div class="criteria">
+                    <input type="number" min="0" max="5" value="5" style="text-align: center;">
+                    <div>
+                        <p>
+                            Culture
+                        </p>
+                    </div>
                 </div>
             </div>
-
+<!--
             <input type="checkbox" name="hierarchy" />
             <label for="hierarchy">
                 Hiérarchiser mes critères
             </label>
-
+-->
             <div id="geographic-searchbar">
                 <button>
                     Zone géographique
