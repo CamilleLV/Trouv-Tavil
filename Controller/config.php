@@ -1,8 +1,8 @@
 <?php
 $host = 'localhost';
-$username = 'votre_utilisateur';
-$password = 'votre_mot_de_passe';
-$database = 'votre_base_de_donnees';
+$username = 'p2105353';
+$password = '618165';
+$database = 'p2105353';
 
 // Connexion à la base de données
 try {

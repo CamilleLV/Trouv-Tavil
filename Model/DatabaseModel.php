@@ -8,6 +8,7 @@ class DatabaseModel {
 
     public function queryData() {
         // Code pour exécuter des requêtes SQL et récupérer des données
+        return $resultatVilles = array('Lyon', 'Marseille', 'Paris', 'Rouen', 'Perpignan', 'Rennes', 'Strasbourg' , 'Lille', 'Bordeaux', 'Toulouse');
     }
 
     public function insertData() {
