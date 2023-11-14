@@ -119,3 +119,50 @@ input{
   .tooltip:hover .tooltiptext {
     visibility: visible;
   }
+
+  .resultat {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    align-items: center;
+
+}
+
+.left {
+    flex: 1;
+    padding: 20px;
+    margin: 20px;
+    border-right: 1px solid #ccc;
+    text-align: center;
+    background-color: #93c47d;
+    border-radius: 50px;
+}
+
+.right {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+}
+
+.left ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.left ul li {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    width: 70%;
+    background-color: white;
+}
+
+li a {
+    text-decoration: none;
+    color: black;
+}
