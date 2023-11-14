@@ -27,13 +27,7 @@ if (isset($_GET['page'])) {
         }
         require_once(PATH_CONTROLLERS . $page . '.php');
     }
-
-
 } else {
-    $page = 'connexion';
+    $page = 'test';
     require_once(PATH_CONTROLLERS . $page . '.php'); //appel du controller
 }
-
-
-
-?>
