@@ -1,0 +1,102 @@
+/**
+*
+*
+* Menu 
+*
+*
+*/
+
+/* Pour mettre le menu à droite */
+.navNative {
+  display: flex;
+  flex-direction: column;
+
+  z-index: 0;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 15%;
+}
+
+/* Pour le formulaire en plusieurs étapes */
+
+/*progressbar*/
+
+#progressbar li {
+  list-style-type: none;
+  position: relative;
+  padding-top: 10;
+  width: 25%;
+}
+
+#progressbar2 li {
+  list-style-type: none;
+  position: relative;
+  padding-top: 15;
+  width: 25%;
+}
+
+#progressbar li:last-of-type,
+#progressbar2 li:last-of-type {
+  width: 0%;
+}
+
+/*ProgressBar before any progress*/
+
+/*ProgressBar connectors*/
+#progressbar li:after,
+#progressbar2 li:after {
+  content: "";
+  width: 85%;
+  height: 4px;
+  background: lightgray;
+  position: absolute;
+  margin-left: 29px;
+  left: 0;
+  top: 25px;
+  z-index: -1;
+}
+
+#progressbar2 li:after {
+  width: 100%;
+  margin-left: 15px;
+}
+
+/*Color number of the step and the connector before it*/
+#progressbar li.active:before,
+#progressbar li.active:after,
+#progressbar2 li.active:before,
+#progressbar2 li.active:after {
+  background: #198754;
+}
+
+.number,
+.checked {
+  min-width: 30px;
+  max-width: 30px;
+  height: 30px;
+}
+
+.icon {
+  color: white;
+}
+
+/* Calendrier */
+
+.color-square {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+}
+
+#fc-dom-1 {
+  font-size: 1.5em;
+  font-weight: bold;
+  /*margin-bottom: 2%;*/
+}
+
+/* Liste des permanents */
+
+.btn-hover {
+  background-color: #dc3545;
+}
