@@ -1,12 +1,13 @@
 <?php
 
-
-
 require_once(PATH_MODELS . 'VilleDAO.php');
 
 $villeDAO = new VilleDAO(false);
 
 if (isset($_POST)) {
+    $result = $villeDAO->getVilles('true', 'false', 'true', 'true', 'false');
+
+    //var_dump($result);
 
     if (!empty($_POST['education'])) {
         $education = htmlspecialchars($_POST['education']);
@@ -40,12 +41,12 @@ if (isset($_POST)) {
 
 
 }
-
-if ($education !== null && $cost !== null && $transport !== null && $size !== null && $culture !== null) {
+$result = $villeDAO->getVilles('true', 'false', 'true', 'true', 'false');
+/*if ($education !== null && $cost !== null && $transport !== null && $size !== null && $culture !== null) {
     $result = $villeDAO->getVilles($education, $cost, $transport, $size, $culture);
 } else {
-    $result = $villeDAO->getVilles(true, true, true, true, true);
-}
+
+}*/
 
 
 require_once(PATH_VIEWS . 'test.php');

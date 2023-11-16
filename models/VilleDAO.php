@@ -7,13 +7,12 @@ class VilleDAO extends DAO
 {
     public function getVilles($crit1, $crit2, $crit3, $crit4, $crit5)
     {
-        $sql = "SELECT * from Web_Resume
-                where CRIT1 = True
-                and (CRIT2 = True
-                and CRIT3 = True
-                and CRIT4 = True
-                and CRIT5 = True)
-                VALUES (:crit1, :crit2, :crit3, :crit4, :crit5)";
+        $sql = "SELECT * from web_resume
+                where CTR1_LoyerCher = :crit1
+                and CTR2_Grande_ville = :crit2
+                and CTR3_Gare = :crit3
+                and CTR4_Ecole = :crit4
+                and CTR5_Culture_Active = :crit5 limit 10";
 
         try {
             $result = $this->queryAll(
@@ -29,7 +28,21 @@ class VilleDAO extends DAO
         } catch (Exception $e) {
             var_dump("oups");
         }
-
         return $result;
     }
+
+    public function success()
+    {
+        $sql = "SELECT count(*) from web_resume";
+
+        try {
+            $result = $this->queryAll($sql, null);
+        } catch (Exception $e) {
+            var_dump("oups");
+        }
+        return $result;
+    }
+
 }
+
+//  return $resultatVilles = array('Lyon', 'Marseille', 'Paris', 'Rouen', 'Perpignan', 'Rennes', 'Strasbourg' , 'Lille', 'Bordeaux', 'Toulouse');

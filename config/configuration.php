@@ -4,16 +4,13 @@ const DEBUG = true; // production : false; dev : true
 
 // Accès base de données
 const BD_HOST = 'localhost';
-const BD_DBNAME = 'webs5';
-const BD_USER = 'root'; //gerhard-usr //dev
-const BD_PWD = ''; //GesThi9786Mon  //x6xDWpiq)68.F4vP
+const BD_DBNAME = 'webs5'; //p2105353
+const BD_USER = 'root'; //gerhard-usr //dev //p2105353
+const BD_PWD = ''; //GesThi9786Mon  //x6xDWpiq)68.F4vP //618165
 
 
 // Langue du site
 const LANG = 'FR-fr';
-
-
-
 
 
 //dossiers racines du site
