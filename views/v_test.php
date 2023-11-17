@@ -96,22 +96,20 @@
                 <ul>
                     <?php
                     if (isset($_POST['submit'])) {
-                        
+                        if (empty($result)) {
+                            echo "Aucun résultat";
+                        } else {
+                            foreach ($result as $ville) {
+                                $nomville = $ville['COM'];
+                                ?>
+                                <li><a target="_blank" href="https://fr.wikipedia.org/wiki/<?= $nomville ?>">
+                                        <?= $nomville ?>
+                                    </a></li>
+                                <?php
+                            }
+                        }
                     }
-                    foreach ($result as $ville) {
 
-                        $nomville = $ville['LIB_Commune'];
-                        /*$prenomnp = $demande['PRENOMNP'];
-                        $nbrequired = $demande['NBREQUIREDINFO'];
-                        $nbcomplete = $demande['NBCOMPLETEDINFO'];
-                        $creator = $demande['CREATEUR'];
-                        $idperm = $demande['IDPERM'];*/
-                        ?>
-                        <li><a target="_blank" href="https://fr.wikipedia.org/wiki/">
-                                <?= $nomville ?>
-                            </a></li>
-                        <?php
-                    }
                     ?>
                 </ul>
             </div>
