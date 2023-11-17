@@ -27,7 +27,7 @@
                 </div>
                 <div class="criteria-list">
                     <div class="criteria">
-                        <input name="education" type="number" min="1" max="5" value="1" style="text-align: center;">
+                        <input name="education" type="checkbox" style="text-align: center;">
                         <div>
                             <label for="education">
                                 Accès à l'école
@@ -35,7 +35,7 @@
                         </div>
                     </div>
                     <div class="criteria">
-                        <input name="cost" type="number" min="1" max="5" value="2" style="text-align: center;">
+                        <input name="cost" type="checkbox" style="text-align: center;">
                         <div>
                             <label for="cost">
                                 Coût du logement
@@ -43,7 +43,7 @@
                         </div>
                     </div>
                     <div class="criteria">
-                        <input name="transport" type="number" min="1" max="5" value="3" style="text-align: center;">
+                        <input name="transport" type="checkbox" style="text-align: center;">
                         <div>
                             <label for="transport">
                                 Transports (gare)
@@ -51,7 +51,7 @@
                         </div>
                     </div>
                     <div class="criteria">
-                        <input name="size" type="number" min="1" max="5" value="4" style="text-align: center;">
+                        <input name="size" type="checkbox" style="text-align: center;">
                         <div>
                             <label for="size">
                                 Grande ville
@@ -59,7 +59,7 @@
                         </div>
                     </div>
                     <div class="criteria">
-                        <input name="culture" type="number" min="1" max="5" value="5" style="text-align: center;">
+                        <input name="culture" type="checkbox" style="text-align: center;">
                         <div>
                             <label for="culture">
                                 Culture
@@ -96,7 +96,7 @@
                 <ul>
                     <?php
                     if (isset($_POST['submit'])) {
-
+                        
                     }
                     foreach ($result as $ville) {
 

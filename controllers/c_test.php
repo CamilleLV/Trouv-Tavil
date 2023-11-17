@@ -7,8 +7,6 @@ $villeDAO = new VilleDAO(false);
 if (isset($_POST)) {
     $result = $villeDAO->getVilles('true', 'false', 'true', 'true', 'false');
 
-    //var_dump($result);
-
     if (!empty($_POST['education'])) {
         $education = htmlspecialchars($_POST['education']);
     } else {
