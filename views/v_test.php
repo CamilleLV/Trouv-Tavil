@@ -77,9 +77,15 @@
                     <button>
                         Zone géographique
                     </button>
-                    <input type="text" placeholder="Search..">
+                    <select placeholder="Search..">
+                        <option value="all">Toute la france</option>
+                    </select>
                 </div>
 
+                <div class="slidecontainer">
+                    <p>nombre d'habitants</p>
+                <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                </div>
                 <div div="centered">
                     <input type="submit" class="research" value="Recherche rapide" name="submit">
 
