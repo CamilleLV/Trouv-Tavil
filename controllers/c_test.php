@@ -5,52 +5,52 @@ require_once(PATH_MODELS . 'VilleDAO.php');
 $villeDAO = new VilleDAO(false);
 
 if (isset($_POST)) {
+    if (!empty($_POST["habMin"])) {
+        $habMin = htmlspecialchars($_POST["habMin"]);
+    } else {
+        $habMin = null;
+    }
+
+    if (!empty($_POST["habMax"])) {
+        $habMax = htmlspecialchars($_POST["habMax"]);
+    } else {
+        $habMax = null;
+    }
+
+    if (!empty($_POST["region_department"])) {
+        $region_department = htmlspecialchars($_POST["region_department"]);
+    } else {
+        $region_department = null;
+    }
 
     if (!empty($_POST['education'])) {
-        $education = 'true';
+        $education = htmlspecialchars($_POST['education']);
     } else {
-        $education = 'false';
+        $education = 0;
     }
 
     if (!empty($_POST['cost'])) {
-        $cost = 'true';
+        $cost = htmlspecialchars($_POST['cost']);
     } else {
-        $cost = 'false';
+        $cost = 0;
     }
 
     if (!empty($_POST['transport'])) {
-        $transport = 'true';
+        $transport = htmlspecialchars($_POST['transport']);
     } else {
-        $transport = 'false';
-    }
-
-    if (!empty($_POST['size'])) {
-        $size = 'true';
-    } else {
-        $size = 'false';
+        $transport = 0;
     }
 
     if (!empty($_POST['culture'])) {
-        $culture = 'true';
+        $culture = htmlspecialchars($_POST['culture']);
     } else {
-        $culture = 'false';
+        $culture = 0;
     }
-
-
-} else {
-    $education = null;
-    $cost = null;
-    $transport = null;
-    $size = null;
-    $culture = null;
 }
 
-//$result = $villeDAO->getVilles('true', 'false', 'true', 'true', 'false');
-if ($education !== null && $cost !== null && $transport !== null && $size !== null && $culture !== null) {
-    $result = $villeDAO->getVilles($education, $cost, $transport, $size, $culture);
+if ($habMin != null && $habMax != null && $region_department != null) {
+    $result = $villeDAO->getVilles($habMin, $habMax, $region_department, $education, $cost, $transport, $culture);
 } else {
-
 }
-
 
 require_once(PATH_VIEWS . 'test.php');

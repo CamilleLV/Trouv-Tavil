@@ -5,24 +5,26 @@ require_once(PATH_MODELS . 'DAO.php');
 
 class VilleDAO extends DAO
 {
-    public function getVilles($crit1, $crit2, $crit3, $crit4, $crit5)
+    public function getVilles($habMin, $habMax, $localisation, $education, $cost, $transport, $culture)
     {
-        $sql = "SELECT * from web_resume
-                where CTR1_LoyerCher = :crit1
-                and CTR2_Grande_ville = :crit2
-                and CTR3_Gare = :crit3
-                and CTR4_Ecole = :crit4
-                and CTR5_Culture_Active = :crit5 limit 10";
+        $sql = "SELECT colonne_nom, (:education * colonne_critere_education) + (:cost * colonne_critere_cost) + (:transport * colonne_critere_transport) + (:culture * colonne_critere_culture) as score
+                from web_resume
+                where colonne_taille_de_la_ville > :habMin and colonne_taille_de_la_ville < :habMax
+                and colonne_departement = :localisation
+                order by score
+                limit 10";
 
         try {
             $result = $this->queryAll(
                 $sql,
                 array(
-                    "crit1" => $crit1,
-                    "crit2" => $crit2,
-                    "crit3" => $crit3,
-                    "crit4" => $crit4,
-                    "crit5" => $crit5,
+                    "habMin" => $habMin,
+                    "habMax" => $habMax,
+                    "localisation" => $localisation,
+                    "education" => $education,
+                    "cost" => $cost,
+                    "transport" => $transport,
+                    "culture" => $culture
                 )
             );
         } catch (Exception $e) {
@@ -42,7 +44,6 @@ class VilleDAO extends DAO
         }
         return $result;
     }
-
 }
 
 //  return $resultatVilles = array('Lyon', 'Marseille', 'Paris', 'Rouen', 'Perpignan', 'Rennes', 'Strasbourg' , 'Lille', 'Bordeaux', 'Toulouse');
