@@ -21,8 +21,8 @@
                         Mes critères :
                     </h3>
                     <div class="tooltip">?
-                        <span class="tooltiptext">Pour les classer, Indiquez en dessous de chaques critères un nombre de
-                            1 à 5 correspondant à leur importance selon vous (1 étant le plus importante) </span>
+                        <span class="tooltiptext">Pour faire une recherche ciblée, cochez un ou plusieurs cirtères, 
+                            renseignez une zone goégraphique et faites glisser le curseur du nombre d'habitants</span>
                     </div>
                 </div>
                 <div class="criteria-list">
@@ -78,12 +78,12 @@
                         Zone géographique
                     </button>
                     <select placeholder="Search..">
-                        <option value="all">Toute la france</option>
+                        <option value="all">Toute la France</option>
                     </select>
                 </div>
 
                 <div class="slidecontainer">
-                    <p>nombre d'habitants</p>
+                    <p>Nombre d'habitants</p>
                 <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
                 </div>
                 <div div="centered">
@@ -122,17 +122,14 @@
                 </ul>
             </div>
             <div class="right">
-                <h2>Notre manière de classer les villes</h2>
+                <h2>Bienvenus sur Trouv'tavil</h2>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris erat ipsum, venenatis vel ligula
-                    viverra, vestibulum commodo metus. Pellentesque tempus pellentesque tortor, quis laoreet risus. Nunc
-                    sollicitudin lacus et urna malesuada tristique. Maecenas aliquam ex lectus, eu luctus massa
-                    imperdiet eget. Nunc malesuada commodo porttitor. Nulla viverra ligula eget nibh vehicula lacinia.
-                    Etiam mattis rutrum risus ultricies scelerisque. Nam molestie lorem nulla, vitae sodales lectus
-                    ullamcorper a. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec a interdum
-                    sapien. Duis ac elementum nisi, non sagittis leo. Vivamus semper, orci nec hendrerit tempor, magna
-                    dui ornare tellus, nec bibendum tortor lorem vitae leo. In varius nibh vitae massa pharetra lacinia.
-                    Duis tincidunt justo eget commodo tempus. Maecenas laoreet fermentum sem ut cursus.
+                Trouv'tavil est une plateforme qui vous permet de trouver la ville qui vous ressemble. Nous vous offrons la 
+                possibilité de choisir votre futur lieu de vie en fonction de vos préférences et de vos envies, rapidement 
+                et facilement. 
+                Nous avons classé pour vous les meilleures villes françaises pour vous installer, en prenant en compte des 
+                critères jugés importants par les français, comme le coût du logement, l'accès à l'école ou encore les 
+                transports en commun.
                     <br>
                     Nam convallis ac urna quis sagittis. Phasellus suscipit finibus tellus, ullamcorper venenatis justo
                     volutpat ac. Nunc fermentum a urna id auctor. Fusce ac nulla vel risus ornare pulvinar. Nam lacinia
