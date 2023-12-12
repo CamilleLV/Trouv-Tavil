@@ -26,8 +26,8 @@
                         Mes critères :
                     </h3>
                     <div class="tooltip">?
-                        <span class="tooltiptext">Pour les classer, Indiquez en dessous de chaques critères un nombre de
-                            1 à 5 correspondant à leur importance selon vous (1 étant le plus importante) </span>
+                        <span class="tooltiptext">Pour faire une recherche ciblée, cochez un ou plusieurs cirtères, 
+                            renseignez une zone goégraphique et faites glisser le curseur du nombre d'habitants</span>
                     </div>
                 </div>
                 <div class="criteria-list">
@@ -220,38 +220,23 @@
                 </ul>
             </div>
             <div class="right">
+                <h2>Bienvenus sur Trouv'tavil !</h2>
+                <p>
+                Trouv'tavil, la plateforme idéale pour trouver la ville parfaite où vous installer ! 
+                Notre site simplifie le processus de sélection en vous permettant de sélectionner des critères 
+                précis tels que la taille de la population, la localisation géographique, le coût de la vie... 
+                En quelques clics, découvrez une liste de villes correspondant exactement à vos préférences. 
+                Trouv'tavil rend le choix de votre prochain lieu de vie aussi simple que personnalisé. 
+                Préparez-vous à explorer et à trouver la ville qui répond à tous vos critères.
+                </p>
+                <br>
                 <h2>Notre manière de classer les villes</h2>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris erat ipsum, venenatis vel ligula
-                    viverra, vestibulum commodo metus. Pellentesque tempus pellentesque tortor, quis laoreet risus. Nunc
-                    sollicitudin lacus et urna malesuada tristique. Maecenas aliquam ex lectus, eu luctus massa
-                    imperdiet eget. Nunc malesuada commodo porttitor. Nulla viverra ligula eget nibh vehicula lacinia.
-                    Etiam mattis rutrum risus ultricies scelerisque. Nam molestie lorem nulla, vitae sodales lectus
-                    ullamcorper a. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec a interdum
-                    sapien. Duis ac elementum nisi, non sagittis leo. Vivamus semper, orci nec hendrerit tempor, magna
-                    dui ornare tellus, nec bibendum tortor lorem vitae leo. In varius nibh vitae massa pharetra lacinia.
-                    Duis tincidunt justo eget commodo tempus. Maecenas laoreet fermentum sem ut cursus.
-                    <br>
-                    Nam convallis ac urna quis sagittis. Phasellus suscipit finibus tellus, ullamcorper venenatis justo
-                    volutpat ac. Nunc fermentum a urna id auctor. Fusce ac nulla vel risus ornare pulvinar. Nam lacinia
-                    porttitor purus a molestie. Ut sed dui imperdiet, pulvinar velit sit amet, fermentum turpis. Duis
-                    dapibus imperdiet nulla et venenatis. Cras posuere nulla eget tortor tincidunt, sed suscipit purus
-                    rutrum. Nunc mattis felis sed leo porttitor venenatis ut a mauris. Morbi vulputate tempus odio et
-                    lobortis. Sed rhoncus diam quis arcu blandit, vel sodales sem tristique. Suspendisse eget turpis id
-                    lacus malesuada iaculis.
-                    <br>
-                    Morbi sodales, turpis vel fermentum consequat, orci dui convallis leo, eu molestie sem neque id
-                    mauris. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec finibus pulvinar leo, eu
-                    dignissim purus malesuada et. In sed feugiat tortor, dignissim fringilla risus. Curabitur posuere,
-                    odio et varius interdum, dolor dolor ultricies urna, id posuere nulla mi vel nulla. Integer sit amet
-                    iaculis est, vel dignissim felis. Mauris neque ex, tristique sit amet quam sit amet, bibendum
-                    accumsan magna. Mauris vulputate arcu id metus egestas, elementum malesuada erat sagittis. Donec eu
-                    dui nulla. Cras tempus, justo non vestibulum rhoncus, ligula risus consectetur nisi, eleifend
-                    dignissim nisl odio et purus. Curabitur ante justo, blandit non quam eu, commodo rutrum risus. Nulla
-                    mollis scelerisque porta. Morbi elementum ipsum metus, et ornare tortor consequat a. Aliquam
-                    porttitor odio justo, ac blandit augue pharetra eu. Donec cursus velit auctor mauris aliquet
-                    ultricies. Fusce tincidunt massa nisi, in rhoncus tellus congue id.
-                </p>
+                Nos données sont issues des données publiques sur les 35 000 communes françaises. Nous avons 
+                déterminé 5 critères principaux, et pertinents, pour choisir de s'installer dans une nouvelle ville.
+                Notre recherche consiste ensuite à récupérer les communes possédant le plus de critères en communs avec 
+                votre sélection, afin de vous proposer un résultat au plus proche de votre demande.
+                </p> 
             </div>
         </div>
     </main>
