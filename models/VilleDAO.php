@@ -5,11 +5,11 @@ require_once(PATH_MODELS . 'DAO.php');
 
 class VilleDAO extends DAO
 {
-    public function getVilles($habMin, $habMax, $localisation, $education, $cost, $transport, $culture)
+    public function getVilles($habMin, $habMax, $localisation, $education, $cost, $transport, $culture, $sante)
     {
-        $sql = "SELECT colonne_nom, (:education * colonne_critere_education) + (:cost * colonne_critere_cost) + (:transport * colonne_critere_transport) + (:culture * colonne_critere_culture) as score
+        $sql = "SELECT nom_commune, (:education * Note_Ecole) + (:cost * Note_Loyer) + (:transport * Note_Gare) + (:culture * Note_Culture) + (:sante * Note_Medecin) as score
                 from web_resume
-                where colonne_taille_de_la_ville > :habMin and colonne_taille_de_la_ville < :habMax
+                where taille_population > :habMin and taille_population < :habMax
                 and colonne_departement = :localisation
                 order by score
                 limit 10";
@@ -24,7 +24,8 @@ class VilleDAO extends DAO
                     "education" => $education,
                     "cost" => $cost,
                     "transport" => $transport,
-                    "culture" => $culture
+                    "culture" => $culture,
+                    "sante" => $sante
                 )
             );
         } catch (Exception $e) {

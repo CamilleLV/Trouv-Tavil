@@ -46,10 +46,16 @@ if (isset($_POST)) {
     } else {
         $culture = 0;
     }
+
+    if (!empty($_POST['sante'])) {
+        $sante = htmlspecialchars($_POST['sante']);
+    } else {
+        $sante = 0;
+    }
 }
 
 if ($habMin != null && $habMax != null && $region_department != null) {
-    $result = $villeDAO->getVilles($habMin, $habMax, $region_department, $education, $cost, $transport, $culture);
+    $result = $villeDAO->getVilles($habMin, $habMax, $region_department, $education, $cost, $transport, $culture, $sante);
 } else {
 }
 
