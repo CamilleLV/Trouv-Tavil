@@ -11,6 +11,12 @@
 </head>
 
 <body>
+    <!-- <?php
+        if (isset($_POST['submit'])) {
+            print_r($_POST);
+        }
+        
+    ?> -->
     <div id="sticky">
         <a href="./">
     <img src="assets\img\logo.png" width="75px" height="75px"/>
@@ -18,7 +24,7 @@
         <h1 id="titleTrouv">Trouv'</h1><h1 id="titleTavil">Tavil</h1>
     </div>
     <header>
-        <form method="POST">
+        <form method="POST" action="">
             <div>
                 <h2>Recherche</h2>
                 <div style="display: flex;">
@@ -31,53 +37,37 @@
                     </div>
                 </div>
                 <div class="criteria-list">
-                    <div class="criteria">
-                        <input name="education" type="checkbox" style="text-align: center;">
-                        <div>
-                            <label for="education">
-                                Accès à l'école
-                            </label>
-                        </div>
-                    </div>
-                    <div class="criteria">
-                        <input name="cost" type="checkbox" style="text-align: center;">
-                        <div>
-                            <label for="cost">
-                                Coût du logement
-                            </label>
-                        </div>
-                    </div>
-                    <div class="criteria">
-                        <input name="transport" type="checkbox" style="text-align: center;">
-                        <div>
-                            <label for="transport">
-                                Transports (gare)
-                            </label>
-                        </div>
-                    </div>
-                    <div class="criteria">
-                        <input name="size" type="checkbox" style="text-align: center;">
-                        <div>
-                            <label for="size">
-                                Grande ville
-                            </label>
-                        </div>
-                    </div>
-                    <div class="criteria">
-                        <input name="culture" type="checkbox" style="text-align: center;">
-                        <div>
-                            <label for="culture">
-                                Culture
-                            </label>
-                        </div>
-                    </div>
+                <?php
+
+                    $criteres_disponibles = [
+                        "none" => 'Aucun',
+                        "education" => "Accès à l'école",
+                        "soins" => "Accès aux soins",
+                        "festival" => "Ville festive",
+                        "logement" => "Coût du logement",
+                        "gare" => "Proximité d'une gare",
+                        "musee" => "Musées présents",
+                        "association" => "Ville associative",
+                        "chomage" => "Dynamisme économique",
+                        "fibre" => "Ville fibrée",
+                        "soleil" => "Ensoleillement"
+                    ];
+
+                    for ($i = 1; $i <= 5; $i++) {
+                        $nom_cle = 'critere' . $i;
+                        echo '<div class="criteria">';
+                        echo '<label for="' . $nom_cle . '">Critère n°' . $i . '</label>';
+                        echo '<select name="' . $nom_cle . '" id="' . $nom_cle . '">';
+
+                        // Options de la liste déroulante
+                        foreach ($criteres_disponibles as $cle => $valeur) {
+                            echo '<option value="' . $cle . '">' . $valeur . '</option>';
+                        }
+
+                        echo '</select></div><br>';
+                    }
+                    ?>
                 </div>
-                <!--
-                <input type="checkbox" name="hierarchy" />
-                <label for="hierarchy">
-                    Hiérarchiser mes critères
-                </label>
-    -->
                 <div id="geographic-searchbar">
                     <button>
                         Zone géographique
@@ -93,7 +83,7 @@
                 }
                 
                 // Créer la liste déroulante HTML
-                echo '<form action="traitement.php" method="post">';
+                // echo '<form action="traitement.php" method="post">';
                 echo '<select name="departement">';
                 echo '<option value="France">Toute la france</option>';
                 foreach ($regions as $region => $departements) {
@@ -109,7 +99,7 @@
                 </div>
 
                 <div class="slidecontainer">
-                    <p>nombre d'habitants : </p>
+                    <p>Nombre d'habitants : </p>
                     <p><span id="value1"></span></p>
                     <div class="slider" id="slider">
                         <div class="slider-track"></div>
