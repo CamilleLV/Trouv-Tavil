@@ -85,8 +85,7 @@
                     <?php
 
                 // Remplacer cette partie avec le code pour charger les données JSON
-                $data = json_decode(file_get_contents('assets\json\departements-region.json'), true);
-
+                $data = json_decode(file_get_contents('assets/json/departements-region.json'), true);
                 // Regrouper les départements par région
                 $regions = [];
                 foreach ($data as $entry) {
