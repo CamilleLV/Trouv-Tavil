@@ -19,25 +19,15 @@
     ?>
     <div id="sticky">
         <a href="./">
-    <img src="assets/img/logo.png" width="50px" height="50px"/>
+    <img src="<?= PATH_IMAGES ?>logo.png" width="75px" height="75px"/>
 </a>
         <h1 id="titleTrouv">Trouv'</h1><h1 id="titleTavil">Tavil</h1>
     </div>
     <header>
         <form method="POST" action="">
             <div>
-                <div style="display: flex;">
-                    <h3>
-                        Mes critères :
-                    </h3>
-                    <div class="tooltip">?
-                        <span class="tooltiptext">Pour faire une recherche ciblée, cochez un ou plusieurs cirtères, 
-                            renseignez une zone goégraphique et faites glisser le curseur du nombre d'habitants</span>
-                    </div>
-                </div>
                 <div class="criteria-list">
                 <?php
-
                     $criteres_disponibles = [
                         "none" => 'Aucun',
                         "education" => "Accès à l'école",
@@ -66,40 +56,70 @@
                         echo '</select></div><br>';
                     }
                     ?>
+                    <script>
+                        const comboBoxes = [
+                        document.getElementById('critere1'),
+                        document.getElementById('critere2'),
+                        document.getElementById('critere3'),
+                        document.getElementById('critere4'),
+                        document.getElementById('critere5'),
+                        ];
+
+                        function updateOptionStates() {
+                        const selectedValues = [];
+
+                        comboBoxes.forEach(comboBox => {
+                            Array.from(comboBox.options).forEach(option => {
+                            if (option.selected && option.value !== "none") {
+                                console.log(option.value)
+                                selectedValues.push(option.value);
+                            }
+                            });
+                        });
+
+                        comboBoxes.forEach(comboBox => {
+                            Array.from(comboBox.options).forEach(option => {
+                            option.disabled = selectedValues.includes(option.value) && !option.selected;
+                            });
+                        });
+                        }
+
+                        comboBoxes.forEach(comboBox => {
+                        comboBox.addEventListener('change', updateOptionStates);
+                        });
+
+                        updateOptionStates();
+                        </script>
                 </div>
                 <div id="geographic-searchbar">
-                    <button>
+                    <div class="geo-text">
                         Zone géographique
-                    </button>
-                    <?php
-
-                // Remplacer cette partie avec le code pour charger les données JSON
-                $data = json_decode(file_get_contents('assets\json\departements-region.json'), true);
-
-                // Regrouper les départements par région
-                $regions = [];
-                foreach ($data as $entry) {
-                    $regions[$entry['region_name']][] = $entry;
-                }
+                    </div>
+                    <div class="geo-input">
+                        <?php
+                        $data = json_decode(file_get_contents(PATH_JSON.'departements-region.json'), true);
+                        $regions = [];
+                        foreach ($data as $entry) {
+                            $regions[$entry['region_name']][] = $entry;
+                        }
                 
-                // Créer la liste déroulante HTML
-                // echo '<form action="traitement.php" method="post">';
-                echo '<select name="departement">';
-                echo '<option value="France">Toute la france</option>';
-                foreach ($regions as $region => $departements) {
-                    echo '<optgroup label="' . htmlspecialchars($region) . '">';
-                    foreach ($departements as $departement) {
-                        echo '<option value="' . htmlspecialchars($departement['num_dep']) . '">' . htmlspecialchars($departement['dep_name']) . '</option>';
-                    }
-                    echo '</optgroup>';
-                }
-                echo '</select>';
+                        echo '<select name="departement">';
+                        echo '<option value="France">Toute la france</option>';
+                        foreach ($regions as $region => $departements) {
+                            echo '<optgroup label="' . htmlspecialchars($region) . '">';
+                            foreach ($departements as $departement) {
+                                echo '<option value="' . htmlspecialchars($departement['num_dep']) . '">' . htmlspecialchars($departement['dep_name']) . '</option>';
+                            }
+                            echo '</optgroup>';
+                        }
+                        echo '</select>';
 
-                ?>
+                    ?>  
+                    </div>
                 </div>
 
                 <div class="slidecontainer">
-                    <p>Nombre d'habitants : </p>
+                    <p class="nb-hab">Nombre d'habitants </p>
                     <p><span id="value1"></span></p>
                     <div class="slider" id="slider">
                         <div class="slider-track"></div>
@@ -182,7 +202,7 @@
                         }
                     </script>
                 </div>
-                <div div="centered">
+                <div class="centered">
                     <input type="submit" class="research" value="Recherche rapide" name="submit">
                     </input>
                 </div>
@@ -235,4 +255,7 @@
             </div>
         </div>
     </main>
+    <?php
+    require_once(PATH_VIEWS."footer.php");
+    ?>
 </body>

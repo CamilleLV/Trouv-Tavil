@@ -34,11 +34,12 @@ form{
     padding-left: 100px;
     padding-right: 100px;
     box-shadow: 0px 5px 6px #bbbbbb;
+    padding-top: 50px;
 }
 
 .criteria-list {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -48,6 +49,7 @@ form{
     padding: 10px;
     background-color: #93c47d;
     border-radius: 10px;
+    box-shadow: 0px 10px 13px -7px #000000
 }
 
 .criteria-list .criteria label {
@@ -57,7 +59,6 @@ form{
     text-align: center;
     padding-left: 15px;
     padding-right: 15px;
-    box-shadow: 0px 10px 13px -7px #000000
 }
 
 .criteria-list .criteria select {
@@ -77,36 +78,72 @@ form{
 }
 
 #geographic-searchbar{
-    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    /* margin-top: 20px;
     background-color: white;
     width:fit-content;
     border-radius: 10px;
-    box-shadow: 0px 10px 13px -7px #000000
+    box-shadow: 0px 10px 13px -7px #000000; */
+}
 
+.geo-text {
+  padding: 10px;
+  border-radius: 10px;
+  width: 20%;
+  text-align: center;
+  background-color: #93c47d;
+  font-weight: bold;
+}
+
+.geo-input {
+  padding: 10px;
+  width: 80%;
+}
+
+.geo-input select {
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  padding: 5px;
+  height: 100%;
+}
+
+p.nb-hab {
+  text-align: center;
+  background-color: #93c47d;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 10px;
 }
 
 #geographic-searchbar > select{
-    width: 1000px;
+    /* width: 1000px;
     border-radius: 10px;
     height: 30px;
-    border: none;
+    border: none; */
 }
 
 #geographic-searchbar > button{
-    width: 200px;
+    /* width: 200px;
     background-color: #93c47d;
     border-radius: 10px 0px 0px 10px;
-    height: 30px;
+    height: 30px; */
 }
 
 .research{
-    background-color: wheat;
+    background-color: #dd4470;
     width: 200px;
     border-radius: 10px;
-    height: 30px;
+    height: 50px;
     margin-top: 20px;
     margin-bottom: 20px;
-    box-shadow: 0px 10px 13px -7px #000000
+    box-shadow: 0px 10px 13px -7px #000000;
+    font-size: 20px;
+    color: white;
 }
 
 button{
@@ -201,7 +238,9 @@ h1{
 
 .slidecontainer{
     margin-top: 20px;
-    display:flex
+    display:flex;
+    align-items: center;
+
 }
 .slidecontainer>p:first-child{
 width: 300px;
@@ -265,4 +304,19 @@ width: 300px;
     position: absolute;
     top: -2.5px;
     cursor: pointer;
+}
+
+footer {
+  background-color: #c6df76;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  padding-bottom: 20px;
+}
+
+.logoiut {
+  width: 300px;
 }
