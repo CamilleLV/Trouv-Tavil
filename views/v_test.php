@@ -11,12 +11,6 @@
 </head>
 
 <body>
-     <?php
-        if (isset($_POST['submit'])) {
-            print_r($_POST);
-        }
-        
-    ?>
     <div id="sticky">
         <a href="./">
     <img src="<?= PATH_IMAGES ?>logo.png" width="75px" height="75px"/>
