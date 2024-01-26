@@ -5,6 +5,12 @@ require_once(PATH_MODELS . 'VilleDAO.php');
 $villeDAO = new VilleDAO(false);
 
 if (isset($_POST)) {
+    $data = json_decode(file_get_contents('assets/json/mapping-critere-nom.json'), true);
+    $criteres = [];
+    foreach ($data as $entry) {
+        $criteres[] = $entry;
+    }
+
     if (!empty($_POST["habMin"])) {
         $habMin = htmlspecialchars($_POST["habMin"]);
     } else {
@@ -23,39 +29,59 @@ if (isset($_POST)) {
         $region_department = null;
     }
 
-    if (!empty($_POST['education'])) {
-        $education = htmlspecialchars($_POST['education']);
+    if (!empty($_POST['critere1'])) {
+        foreach($criteres as $critere){
+            if($critere['back']==$_POST['critere1']){
+                $critere1 = ($critere['bd']);
+            }
+        }
     } else {
-        $education = 0;
+        $critere1 = null;
     }
 
-    if (!empty($_POST['cost'])) {
-        $cost = htmlspecialchars($_POST['cost']);
+    if (!empty($_POST['critere2'])) {
+        foreach($criteres as $critere){
+            if($critere['back']==$_POST['critere2']){
+                $critere2 = ($critere['bd']);
+            }
+        }
     } else {
-        $cost = 0;
+        $critere2 = null;
     }
 
-    if (!empty($_POST['transport'])) {
-        $transport = htmlspecialchars($_POST['transport']);
+    if (!empty($_POST['critere3'])) {
+        foreach($criteres as $critere){
+            if($critere['back']==$_POST['critere3']){
+                $critere3 = ($critere['bd']);
+            }
+        }
     } else {
-        $transport = 0;
+        $critere3 = null;
     }
 
-    if (!empty($_POST['culture'])) {
-        $culture = htmlspecialchars($_POST['culture']);
+    if (!empty($_POST['critere4'])) {
+        foreach($criteres as $critere){
+            if($critere['back']==$_POST['critere4']){
+                $critere4 = ($critere['bd']);
+            }
+        }
     } else {
-        $culture = 0;
+        $critere4 = null;
     }
 
-    if (!empty($_POST['sante'])) {
-        $sante = htmlspecialchars($_POST['sante']);
+    if (!empty($_POST['critere5'])) {
+        foreach($criteres as $critere){
+            if($critere['back']==$_POST['critere5']){
+                $critere5 = ($critere['bd']);
+            }
+        }
     } else {
-        $sante = 0;
+        $critere5 = null;
     }
 }
 
 if ($habMin != null && $habMax != null && $region_department != null) {
-    $result = $villeDAO->getVilles($habMin, $habMax, $region_department, $education, $cost, $transport, $culture, $sante);
+    $result = $villeDAO->getVilles($habMin, $habMax, $region_department, $critere1, $critere2, $critere3, $critere4, $critere5);
 } else {
 }
 

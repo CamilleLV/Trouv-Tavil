@@ -1,0 +1,62 @@
+[
+    {
+        "back": "none",
+        "front": "Aucun",
+        "bd": "None"
+    },
+    {
+        "back": "education",
+        "front": "Accès à l'école",
+        "bd": "CTR4_Note_Ecole"
+    },
+    {
+        "back": "soins",
+        "front": "Accès aux soins",
+        "bd": "CTR2_Note_Medecin"
+    },
+    {
+        "back": "festival",
+        "front": "Ville festive",
+        "bd": "CTR5_Note_Festival"
+    },
+    {
+        "back": "logement",
+        "front": "Coût du logement",
+        "bd": "CTR1_Note_loyer"
+    },
+    {
+        "back": "gare",
+        "front": "Proximité d'une gare",
+        "bd": "CTR3_Note_Gare"
+    },
+    {
+        "back": "musee",
+        "front": "Musées présents",
+        "bd": "CTR6_Musee"
+    },
+    {
+        "back": "association",
+        "front": "Ville associative",
+        "bd": "CTR7_Associations"
+    },
+    {
+        "back": "chomage",
+        "front": "Dynamisme économique",
+        "bd": "CTR9_Dynamisme_Economique"
+    },
+    {
+        "back": "fibre",
+        "front": "Ville fibrée",
+        "bd": "CTR8_Acces_Fibre"
+    },
+    {
+        "back": "soleil",
+        "front": "Ensoleillement",
+        "bd": "CTR10_Ensoleillement"
+    },
+    {
+        "back": "securite",
+        "front": "Sécurité",
+        "bd": "CTR11_Securite"
+    }
+]
