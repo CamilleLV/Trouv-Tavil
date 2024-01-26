@@ -266,3 +266,162 @@ width: 300px;
     top: -2.5px;
     cursor: pointer;
 }
+
+#info-pra
+{
+  /* display: flex; */
+  padding: 0.625em 0.625em 0.625em 0.625em;
+  background-color: #c6df76;
+  color: #223b00;
+  position: relative;
+  background: #c6df76;
+}
+
+#info-pra a
+{
+  text-decoration: none;
+  color: #223b00;
+}
+
+#info-pra a:hover
+{
+  color: #223b00;
+}
+
+#info-pra p
+{
+  font-weight: bold;
+}
+
+#info-pra h2
+{
+  text-transform: uppercase;
+  font-size: 1.875em;
+  text-align: center;
+  width: 100%;
+  margin-top: 0px;
+}
+
+#iut
+{
+  text-transform: uppercase;
+  font-size: 1.875em;
+  text-align: center;
+  width: 100%;
+  margin-top: 0px;
+}
+
+#info-pra h3
+{
+  margin-top: 0px;
+  font-size: 1.25em;
+  text-transform: uppercase;
+}
+
+#info-pra img
+{
+  height: 16px;
+  align-self: center;
+  margin-right: 0.3em;
+}
+
+#logotrouv img
+{
+  height: 160px;
+  align-self: top;
+  margin-top: -7em;
+}
+
+#logoiut img
+{
+  height: 160px;
+  align-self: top;
+  margin-top: -11em;
+  margin-left:60em;
+}
+
+
+#copyright 
+{
+  text-transform: uppercase;
+  font-size: 1em;
+  text-align: center;
+  width: 100%;
+  margin-top: 2em;
+}
+
+#info-pra-content
+{
+  display: flex;
+  justify-content: space-around;
+}
+
+.info-pra-content-align
+{
+  display: flex;
+}
+
+#lieu
+{
+  padding: 1em;
+}
+
+#horaire
+{
+  padding: 1em;
+}
+
+#access
+{
+  padding: 1em;
+}
+
+#info-pra::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 3.438em 6.25em 0em 6.25em;
+  border-color: #c6df76 transparent transparent transparent;
+  left: 50%;
+  transform: translateX(-50%) translateY(100%);
+}
+
+
+footer
+{
+  margin-top: 6em;
+}
+
+footer h2
+{
+  text-transform: uppercase;
+  text-align: center;
+  color:#434544;
+}
+
+#logos
+{
+  display: flex;
+  justify-content: center;
+}
+
+#logos img
+{
+  padding: 0em 0.625em 0.625em 0.625em;
+}
+
+#logos a img {
+	-webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+#logos a:hover img { /* effet zoom lors du survol de l'image */
+	-webkit-transform: scale(1.3);
+	transform: scale(1.3);
+}
+
+/* * * * * * * * * * FOOTER + BAS DE PAGE * * * * * * * * * */

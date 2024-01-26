@@ -24,7 +24,7 @@ define('PATH_ONESHEET', './onesheet-1.2.4/');
 
 //sous dossiers
 define('PATH_CSS', PATH_ASSETS . 'css/');
-define('PATH_IMAGES', PATH_ASSETS . 'images/');
+define('PATH_IMAGES', PATH_ASSETS . 'img/');
 define('PATH_SCRIPTS', PATH_ASSETS . 'scripts/');
 
 define('PATH_CUSTOM_CSS', PATH_ASSETS . 'custom/css/');

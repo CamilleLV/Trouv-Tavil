@@ -19,7 +19,7 @@
     ?> -->
     <div id="sticky">
         <a href="./">
-    <img src="assets/img/logo.png" width="50px" height="50px"/>
+    <img src="<?= PATH_IMAGES ?>logo.png" width="75px" height="75px"/>
 </a>
         <h1 id="titleTrouv">Trouv'</h1><h1 id="titleTavil">Tavil</h1>
     </div>
@@ -236,4 +236,7 @@
             </div>
         </div>
     </main>
+    <?php
+    require_once(PATH_VIEWS."footer.php");
+    ?>
 </body>
