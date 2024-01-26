@@ -26,15 +26,6 @@
     <header>
         <form method="POST" action="">
             <div>
-                <div style="display: flex;">
-                    <h3>
-                        Mes critères :
-                    </h3>
-                    <div class="tooltip">?
-                        <span class="tooltiptext">Pour faire une recherche ciblée, cochez un ou plusieurs cirtères, 
-                            renseignez une zone goégraphique et faites glisser le curseur du nombre d'habitants</span>
-                    </div>
-                </div>
                 <div class="criteria-list">
                 <?php
                     $criteres_disponibles = [
@@ -101,36 +92,34 @@
                         </script>
                 </div>
                 <div id="geographic-searchbar">
-                    <button action="">
+                    <div class="geo-text">
                         Zone géographique
-                    </button>
-                    <?php
-
-                $data = json_decode(file_get_contents(PATH_JSON.'departements-region.json'), true);
-
-                // Regrouper les départements par région
-                $regions = [];
-                foreach ($data as $entry) {
-                    $regions[$entry['region_name']][] = $entry;
-                }
+                    </div>
+                    <div class="geo-input">
+                        <?php
+                        $data = json_decode(file_get_contents(PATH_JSON.'departements-region.json'), true);
+                        $regions = [];
+                        foreach ($data as $entry) {
+                            $regions[$entry['region_name']][] = $entry;
+                        }
                 
-                // Créer la liste déroulante HTML
-                echo '<select name="departement">';
-                echo '<option value="France">Toute la france</option>';
-                foreach ($regions as $region => $departements) {
-                    echo '<optgroup label="' . htmlspecialchars($region) . '">';
-                    foreach ($departements as $departement) {
-                        echo '<option value="' . htmlspecialchars($departement['num_dep']) . '">' . htmlspecialchars($departement['dep_name']) . '</option>';
-                    }
-                    echo '</optgroup>';
-                }
-                echo '</select>';
+                        echo '<select name="departement">';
+                        echo '<option value="France">Toute la france</option>';
+                        foreach ($regions as $region => $departements) {
+                            echo '<optgroup label="' . htmlspecialchars($region) . '">';
+                            foreach ($departements as $departement) {
+                                echo '<option value="' . htmlspecialchars($departement['num_dep']) . '">' . htmlspecialchars($departement['dep_name']) . '</option>';
+                            }
+                            echo '</optgroup>';
+                        }
+                        echo '</select>';
 
-                ?>
+                    ?>  
+                    </div>
                 </div>
 
                 <div class="slidecontainer">
-                    <p>Nombre d'habitants : </p>
+                    <p class="nb-hab">Nombre d'habitants </p>
                     <p><span id="value1"></span></p>
                     <div class="slider" id="slider">
                         <div class="slider-track"></div>
