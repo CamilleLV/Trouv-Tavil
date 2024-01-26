@@ -102,7 +102,7 @@
                         }
                 
                         echo '<select name="departement">';
-                        echo '<option value="France">Toute la france</option>';
+                        echo '<option value="none">Toute la france</option>';
                         foreach ($regions as $region => $departements) {
                             echo '<optgroup label="' . htmlspecialchars($region) . '">';
                             foreach ($departements as $departement) {

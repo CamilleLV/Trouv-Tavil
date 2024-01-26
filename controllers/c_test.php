@@ -32,7 +32,7 @@ if (isset($_POST)) {
         $habMax = null;
     }
 
-    if (!empty($_POST["departement"])) {
+    if (!empty($_POST["departement"]) and $_POST["departement"] != "none") {
         $departement = htmlspecialchars($_POST["departement"]);
     } else {
         $departement = null;
