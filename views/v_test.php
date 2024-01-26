@@ -13,8 +13,8 @@
 <body>
     <div id="sticky">
         <a href="./">
-    <img src="<?= PATH_IMAGES ?>logo.png" width="75px" height="75px"/>
-</a>
+            <img src="<?= PATH_IMAGES ?>logo.png" width="75px" height="75px"/>
+        </a>
         <h1 id="titleTrouv">Trouv'</h1><h1 id="titleTavil">Tavil</h1>
     </div>
     <header>
@@ -44,7 +44,11 @@
 
                         // Options de la liste déroulante
                         foreach ($criteres_disponibles as $cle => $valeur) {
-                            echo '<option value="' . $cle . '">' . $valeur . '</option>';
+                            if (isset($_POST[$nom_cle]) && $_POST[$nom_cle] == $cle) {
+                                echo '<option value="' . $cle . '" selected>' . $valeur . '</option>';
+                            } else {
+                                echo '<option value="' . $cle . '">' . $valeur . '</option>';
+                            }
                         }
 
                         echo '</select></div><br>';
@@ -102,7 +106,11 @@
                         foreach ($regions as $region => $departements) {
                             echo '<optgroup label="' . htmlspecialchars($region) . '">';
                             foreach ($departements as $departement) {
-                                echo '<option value="' . htmlspecialchars($departement['num_dep']) . '">' . htmlspecialchars($departement['dep_name']) . '</option>';
+                                if (isset($_POST['departement']) && $_POST['departement'] == $departement['num_dep']) {
+                                    echo '<option value="' . htmlspecialchars($departement['num_dep']) . '" selected>' . htmlspecialchars($departement['dep_name']) . '</option>';
+                                } else {
+                                    echo '<option value="' . htmlspecialchars($departement['num_dep']) . '">' . htmlspecialchars($departement['dep_name']) . '</option>';
+                                }
                             }
                             echo '</optgroup>';
                         }
@@ -191,7 +199,7 @@
                             range.style.left = thumb1.style.left;
                             range.style.right = slider.offsetWidth - thumb2.offsetLeft - thumb2.offsetWidth + 'px';
 
-                            document.getElementById('inputValue1').value = Math.round(leftValue/1000)*1000 ;
+                            document.getElementById('inputValue1').value = Math.round(leftValue/1000)*1000;
                             document.getElementById('inputValue2').value =  Math.round(rightValue/1000)*1000;
                         }
                     </script>
@@ -199,6 +207,9 @@
                 <div class="centered">
                     <input type="submit" class="research" value="Recherche rapide" name="submit">
                     </input>
+                    <button class="reset">
+                        <a href="./">Réinitialisation</a>
+                    </button>
                 </div>
 
             </div>
