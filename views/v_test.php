@@ -13,14 +13,13 @@
 <body>
     <div id="sticky">
         <a href="./">
-    <img src="assets\img\logo.png" width="75px" height="75px"/>
+    <img src="assets/img/logo.png" width="50px" height="50px"/>
 </a>
         <h1 id="titleTrouv">Trouv'</h1><h1 id="titleTavil">Tavil</h1>
     </div>
     <header>
         <form method="POST">
             <div>
-                <h2>Recherche</h2>
                 <div style="display: flex;">
                     <h3>
                         Mes critères :
@@ -32,7 +31,6 @@
                 </div>
                 <div class="criteria-list">
                     <div class="criteria">
-                        <input name="education" type="checkbox" style="text-align: center;">
                         <div>
                             <label for="education">
                                 Accès à l'école
@@ -40,7 +38,6 @@
                         </div>
                     </div>
                     <div class="criteria">
-                        <input name="cost" type="checkbox" style="text-align: center;">
                         <div>
                             <label for="cost">
                                 Coût du logement
@@ -48,7 +45,6 @@
                         </div>
                     </div>
                     <div class="criteria">
-                        <input name="transport" type="checkbox" style="text-align: center;">
                         <div>
                             <label for="transport">
                                 Transports (gare)
@@ -56,7 +52,6 @@
                         </div>
                     </div>
                     <div class="criteria">
-                        <input name="size" type="checkbox" style="text-align: center;">
                         <div>
                             <label for="size">
                                 Grande ville
@@ -64,7 +59,6 @@
                         </div>
                     </div>
                     <div class="criteria">
-                        <input name="culture" type="checkbox" style="text-align: center;">
                         <div>
                             <label for="culture">
                                 Culture
@@ -85,7 +79,7 @@
                     <?php
 
                 // Remplacer cette partie avec le code pour charger les données JSON
-                $data = json_decode(file_get_contents('assets\json\departements-region.json'), true);
+                $data = json_decode(file_get_contents('assets/json/departements-region.json'), true);
 
                 // Regrouper les départements par région
                 $regions = [];
@@ -174,14 +168,22 @@
                             var leftValue = Math.round((parseInt(thumb1.style.left) / slider.offsetWidth) * max);
                             var rightValue = Math.round((parseInt(thumb2.style.left) / slider.offsetWidth) * max);
 
-                            value1.textContent = leftValue;
-                            value2.textContent = rightValue;
+                            if(leftValue>=1000000){
+                                value1.textContent = Math.round(leftValue/100000)+" M";
+                            }else{
+                                value1.textContent = Math.round(leftValue/1000)+" K";
+                            }
+                            if(rightValue>=1000000){
+                                value2.textContent = Math.round(rightValue/100000)/10+" M"; 
+                            }else{
+                                value2.textContent = Math.round(rightValue/1000)+" K"; 
+                            }
 
                             range.style.left = thumb1.style.left;
                             range.style.right = slider.offsetWidth - thumb2.offsetLeft - thumb2.offsetWidth + 'px';
 
-                            document.getElementById('inputValue1').value = leftValue;
-                            document.getElementById('inputValue2').value = rightValue;
+                            document.getElementById('inputValue1').value = Math.round(leftValue/1000)*1000 ;
+                            document.getElementById('inputValue2').value =  Math.round(rightValue/1000)*1000;
                         }
                     </script>
                 </div>
@@ -201,6 +203,7 @@
                     <?php
                     if (isset($_POST['submit'])) {
                         if (empty($result)) {
+                            var_dump($_POST);
                             echo "Aucun résultat";
                         } else {
                             foreach ($result as $ville) {
