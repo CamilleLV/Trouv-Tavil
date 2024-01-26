@@ -37,7 +37,6 @@
                 </div>
                 <div class="criteria-list">
                 <?php
-
                     $criteres_disponibles = [
                         "none" => 'Aucun',
                         "education" => "Accès à l'école",
@@ -68,13 +67,12 @@
                     ?>
                 </div>
                 <div id="geographic-searchbar">
-                    <button>
+                    <button action="">
                         Zone géographique
                     </button>
                     <?php
 
-                // Remplacer cette partie avec le code pour charger les données JSON
-                $data = json_decode(file_get_contents('assets\json\departements-region.json'), true);
+                $data = json_decode(file_get_contents(PATH_JSON.'departements-region.json'), true);
 
                 // Regrouper les départements par région
                 $regions = [];
@@ -83,7 +81,6 @@
                 }
                 
                 // Créer la liste déroulante HTML
-                // echo '<form action="traitement.php" method="post">';
                 echo '<select name="departement">';
                 echo '<option value="France">Toute la france</option>';
                 foreach ($regions as $region => $departements) {
@@ -182,7 +179,7 @@
                         }
                     </script>
                 </div>
-                <div div="centered">
+                <div class="centered">
                     <input type="submit" class="research" value="Recherche rapide" name="submit">
                     </input>
                 </div>

@@ -25,12 +25,7 @@ define('PATH_ONESHEET', './onesheet-1.2.4/');
 //sous dossiers
 define('PATH_CSS', PATH_ASSETS . 'css/');
 define('PATH_IMAGES', PATH_ASSETS . 'img/');
-define('PATH_SCRIPTS', PATH_ASSETS . 'scripts/');
-
-define('PATH_CUSTOM_CSS', PATH_ASSETS . 'custom/css/');
-define('PATH_CUSTOM_JS', PATH_ASSETS . 'custom/js/');
-define('PATH_CUSTOM_SCSS', PATH_ASSETS . 'custom/scss/');
-
+define('PATH_JSON', PATH_ASSETS . 'json/');
 
 //fichiers
 define('PATH_MENU', PATH_VIEWS . 'menu.php');
