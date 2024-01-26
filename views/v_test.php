@@ -11,12 +11,12 @@
 </head>
 
 <body>
-    <!-- <?php
+     <?php
         if (isset($_POST['submit'])) {
             print_r($_POST);
         }
         
-    ?> -->
+    ?>
     <div id="sticky">
         <a href="./">
     <img src="assets/img/logo.png" width="50px" height="50px"/>
@@ -198,7 +198,6 @@
                     <?php
                     if (isset($_POST['submit'])) {
                         if (empty($result)) {
-                            var_dump($_POST);
                             echo "Aucun résultat";
                         } else {
                             foreach ($result as $ville) {
