@@ -34,6 +34,33 @@ class VilleDAO extends DAO
         return $result;
     }
 
+    public function getVillesAll($habMin, $habMax, $critere1, $critere2, $critere3, $critere4, $critere5)
+    {
+        $sql = "SELECT COM, (21 * :critere1) + (13 * :critere2) + (8 * :critere3) + (5 * :critere4) + (3 * :critere5) as score
+                from web_resume
+                where Population > :habMin and Population < :habMax
+                order by score
+                limit 10";
+
+        try {
+            $result = $this->queryAll(
+                $sql,
+                array(
+                    "habMin" => $habMin,
+                    "habMax" => $habMax,
+                    "critere1" => $critere1,
+                    "critere2" => $critere2,
+                    "critere3" => $critere3,
+                    "critere4" => $critere4,
+                    "critere5" => $critere5
+                )
+            );
+        } catch (Exception $e) {
+            var_dump("oups");
+        }
+        return $result;
+    }
+
     public function success()
     {
         $sql = "SELECT count(*) from web_resume";
@@ -46,5 +73,3 @@ class VilleDAO extends DAO
         return $result;
     }
 }
-
-//  return $resultatVilles = array('Lyon', 'Marseille', 'Paris', 'Rouen', 'Perpignan', 'Rennes', 'Strasbourg' , 'Lille', 'Bordeaux', 'Toulouse');
