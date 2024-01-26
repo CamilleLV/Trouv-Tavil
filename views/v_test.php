@@ -65,6 +65,40 @@
                         echo '</select></div><br>';
                     }
                     ?>
+                    <script>
+                        const comboBoxes = [
+                        document.getElementById('critere1'),
+                        document.getElementById('critere2'),
+                        document.getElementById('critere3'),
+                        document.getElementById('critere4'),
+                        document.getElementById('critere5'),
+                        ];
+
+                        function updateOptionStates() {
+                        const selectedValues = [];
+
+                        comboBoxes.forEach(comboBox => {
+                            Array.from(comboBox.options).forEach(option => {
+                            if (option.selected && option.value !== "none") {
+                                console.log(option.value)
+                                selectedValues.push(option.value);
+                            }
+                            });
+                        });
+
+                        comboBoxes.forEach(comboBox => {
+                            Array.from(comboBox.options).forEach(option => {
+                            option.disabled = selectedValues.includes(option.value) && !option.selected;
+                            });
+                        });
+                        }
+
+                        comboBoxes.forEach(comboBox => {
+                        comboBox.addEventListener('change', updateOptionStates);
+                        });
+
+                        updateOptionStates();
+                        </script>
                 </div>
                 <div id="geographic-searchbar">
                     <button action="">
