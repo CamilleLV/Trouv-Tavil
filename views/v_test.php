@@ -169,7 +169,7 @@
                             var rightValue = Math.round((parseInt(thumb2.style.left) / slider.offsetWidth) * max);
 
                             if(leftValue>=1000000){
-                                value1.textContent = Math.round(leftValue/100000)+" M";
+                                value1.textContent = Math.round(leftValue/100000)/10+" M";
                             }else{
                                 value1.textContent = Math.round(leftValue/1000)+" K";
                             }
