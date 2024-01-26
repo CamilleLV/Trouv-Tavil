@@ -23,8 +23,8 @@ if (isset($_POST)) {
         $habMax = null;
     }
 
-    if (!empty($_POST["region_department"])) {
-        $region_department = htmlspecialchars($_POST["region_department"]);
+    if (!empty($_POST["department"])) {
+        $region_department = htmlspecialchars($_POST["department"]);
     } else {
         $region_department = null;
     }
@@ -80,8 +80,8 @@ if (isset($_POST)) {
     }
 }
 
-if ($habMin != null && $habMax != null && $region_department != null) {
-    $result = $villeDAO->getVilles($habMin, $habMax, $region_department, $critere1, $critere2, $critere3, $critere4, $critere5);
+if ($habMin != null && $habMax != null && $department != null) {
+    $result = $villeDAO->getVilles($habMin, $habMax, $department, $critere1, $critere2, $critere3, $critere4, $critere5);
 } else {
 }
 
