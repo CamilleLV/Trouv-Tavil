@@ -5,6 +5,7 @@ require_once(PATH_MODELS . 'VilleDAO.php');
 $villeDAO = new VilleDAO(false);
 
 if (isset($_POST)) {
+
     if (!empty($_POST["habMin"])) {
         $habMin = htmlspecialchars($_POST["habMin"]);
     } else {
@@ -17,45 +18,45 @@ if (isset($_POST)) {
         $habMax = null;
     }
 
-    if (!empty($_POST["region_department"])) {
-        $region_department = htmlspecialchars($_POST["region_department"]);
+    if (!empty($_POST["department"])) {
+        $region_department = htmlspecialchars($_POST["department"]);
     } else {
         $region_department = null;
     }
 
-    if (!empty($_POST['education'])) {
-        $education = htmlspecialchars($_POST['education']);
+    if (!empty($_POST['critere1'])) {
+        $critere1 = htmlspecialchars($_POST['critere1']);
     } else {
-        $education = 0;
+        $critere1 = 0;
     }
 
-    if (!empty($_POST['cost'])) {
-        $cost = htmlspecialchars($_POST['cost']);
+    if (!empty($_POST['critere2'])) {
+        $critere2 = htmlspecialchars($_POST['critere2']);
     } else {
-        $cost = 0;
+        $critere2 = 0;
     }
 
-    if (!empty($_POST['transport'])) {
-        $transport = htmlspecialchars($_POST['transport']);
+    if (!empty($_POST['critere3'])) {
+        $critere3 = htmlspecialchars($_POST['critere3']);
     } else {
-        $transport = 0;
+        $critere3 = 0;
     }
 
-    if (!empty($_POST['culture'])) {
-        $culture = htmlspecialchars($_POST['culture']);
+    if (!empty($_POST['critere4'])) {
+        $critere4 = htmlspecialchars($_POST['critere4']);
     } else {
-        $culture = 0;
+        $critere4 = 0;
     }
 
-    if (!empty($_POST['sante'])) {
-        $sante = htmlspecialchars($_POST['sante']);
+    if (!empty($_POST['critere5'])) {
+        $critere5 = htmlspecialchars($_POST['critere5']);
     } else {
-        $sante = 0;
+        $critere5 = 0;
     }
 }
 
 if ($habMin != null && $habMax != null && $region_department != null) {
-    $result = $villeDAO->getVilles($habMin, $habMax, $region_department, $education, $cost, $transport, $culture, $sante);
+    $result = $villeDAO->getVilles($habMin, $habMax, $region_department, $critere1, $critere2, $critere3, $critere4, $critere5);
 } else {
 }
 
