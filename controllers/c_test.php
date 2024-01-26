@@ -4,8 +4,17 @@ require_once(PATH_MODELS . 'VilleDAO.php');
 
 $villeDAO = new VilleDAO(false);
 
+$debug = false;
+if ($debug) {
+    $resultat = $villeDAO->success();
+    echo '<pre>';
+        echo 'Nombre de villes : ';
+        print_r($resultat);
+    echo '</pre>';
+}
+
 if (isset($_POST)) {
-    $data = json_decode(file_get_contents('assets/json/mapping-critere-nom.json'), true);
+    $data = json_decode(file_get_contents(PATH_JSON.'mapping-critere-nom.json'), true);
     $criteres = [];
     foreach ($data as $entry) {
         $criteres[] = $entry;
