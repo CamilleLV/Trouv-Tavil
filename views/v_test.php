@@ -68,7 +68,7 @@
 
                         comboBoxes.forEach(comboBox => {
                             Array.from(comboBox.options).forEach(option => {
-                            if (option.selected && option.value !== "none") {
+                            if (option.selected && option.value !== "null") {
                                 console.log(option.value)
                                 selectedValues.push(option.value);
                             }
