@@ -1,8 +1,8 @@
 [
     {
-        "back": "none",
+        "back": "null",
         "front": "Aucun",
-        "bd": "None"
+        "bd": 0
     },
     {
         "back": "education",

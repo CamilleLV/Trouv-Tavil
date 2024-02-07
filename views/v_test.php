@@ -23,7 +23,7 @@
                 <div class="criteria-list">
                 <?php
                     $criteres_disponibles = [
-                        "none" => 'Aucun',
+                        "null" => 'Aucun',
                         "education" => "Accès à l'école",
                         "soins" => "Accès aux soins",
                         "festival" => "Ville festive",

@@ -7,11 +7,11 @@ class VilleDAO extends DAO
 {
     public function getVilles($habMin, $habMax, $localisation, $critere1, $critere2, $critere3, $critere4, $critere5)
     {
-        $sql = "SELECT COM, (21 * :critere1) + (13 * :critere2) + (8 * :critere3) + (5 * :critere4) + (3 * :critere5) as score
+        $sql = "SELECT COM, (21 * ".$critere1.") + (13 * ".$critere2.") + (8 * ".$critere3.") + (5 * ".$critere4.") + (3 * ".$critere5.") as score
                 from web_resume
                 where Population > :habMin and Population < :habMax
                 and CODDEP = :localisation
-                order by score
+                order by score desc
                 limit 10";
 
         try {
@@ -20,12 +20,7 @@ class VilleDAO extends DAO
                 array(
                     "habMin" => $habMin,
                     "habMax" => $habMax,
-                    "localisation" => $localisation,
-                    "critere1" => $critere1,
-                    "critere2" => $critere2,
-                    "critere3" => $critere3,
-                    "critere4" => $critere4,
-                    "critere5" => $critere5
+                    "localisation" => $localisation
                 )
             );
         } catch (Exception $e) {
@@ -36,10 +31,10 @@ class VilleDAO extends DAO
 
     public function getVillesAll($habMin, $habMax, $critere1, $critere2, $critere3, $critere4, $critere5)
     {
-        $sql = "SELECT COM, (21 * :critere1) + (13 * :critere2) + (8 * :critere3) + (5 * :critere4) + (3 * :critere5) as score
+        $sql = "SELECT COM, (21 * ".$critere1.") + (13 * ".$critere2.") + (8 * ".$critere3.") + (5 * ".$critere4.") + (3 * ".$critere5.") as score
                 from web_resume
                 where Population > :habMin and Population < :habMax
-                order by score
+                order by score desc
                 limit 10";
 
         try {
@@ -47,12 +42,7 @@ class VilleDAO extends DAO
                 $sql,
                 array(
                     "habMin" => $habMin,
-                    "habMax" => $habMax,
-                    "critere1" => $critere1,
-                    "critere2" => $critere2,
-                    "critere3" => $critere3,
-                    "critere4" => $critere4,
-                    "critere5" => $critere5
+                    "habMax" => $habMax
                 )
             );
         } catch (Exception $e) {
